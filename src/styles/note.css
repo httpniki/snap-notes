@@ -1,0 +1,83 @@
+#note {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+
+   width: 320px;
+   min-height: 310px;
+   box-shadow: 0 0 15px #00000010;
+}
+
+textarea {
+   flex-grow: 1;
+   border: none;
+   resize: none;
+   font-size: 21px;
+   padding: 10px;
+}
+
+textarea:focus {
+   outline: none;
+}
+
+#note nav {
+   display: flex;
+   background-color: var(--violet);
+}
+
+#note-content-length {
+   display: flex;
+   align-items: center;
+
+   width: max-content;
+   height: 100%;
+
+   padding: 0 5px;
+   color: #ffffff;
+}
+
+#note-nav-btn-container {
+   display: flex;
+   flex-direction: row-reverse;
+   align-items: center;
+
+   width: 100%;
+
+   gap: 5px;
+   padding: 3px 5px;
+}
+
+#note nav button {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   width: 24px;
+   height: 24px;
+
+   border: none;
+   padding: 0;
+   background: none;
+
+   cursor: pointer;
+}
+
+#note-change-color-modal {
+   position: absolute;
+   inset: 0;
+
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   grid-template-rows: repeat(auto-fill, 1fr);
+   gap: 1px;
+
+   background-color: #ffffff;
+   z-index: 10;
+}
+
+.color-picker-btn {
+   background: none;
+   border: none;
+
+   cursor: pointer;
+}

@@ -1,0 +1,54 @@
+:root {
+         --blue: #84b6f4;
+         --yellow: #fdfd96;
+         --green: #b0f2c2;
+         --green-dd: #b0f2c2dd;
+         --violet: #bc98f3;
+}
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   margin: 0;
+}
+
+#root {
+   min-height: 100vh;
+   padding: 20px;
+   background-color: var(--blue);
+}
+
+#root header {
+   display: flex;
+   align-items: center;
+   justify-content: right;
+
+   margin-bottom: 20px;
+}
+
+#create-note-btn {
+   border: 0;
+   padding: 10px 15px;
+   outline: none;
+   background-color: var(--green);
+
+   font-size: 18px;
+   color: #ffffff;
+}
+
+#create-note-btn:hover {
+   background-color: var(--green-dd);
+   cursor: pointer;
+}
+
+main {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   flex-wrap: wrap;
+
+   gap: 45px;
+   margin: 0 100px;
+}
