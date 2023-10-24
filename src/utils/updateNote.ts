@@ -1,7 +1,7 @@
 import {Note} from "../types/note";
-import {UpdateNotesProps} from "../types/types";
+import {UpdateNoteProps} from "../types/types";
 
-type UpdateArgs = Omit<UpdateNotesProps, 'id'>
+type UpdateArgs = Omit<UpdateNoteProps, 'id'>
 
 export default function updateNote(currentNote: Note, update: UpdateArgs): Note {
    const {content, color, isEditable} = update
