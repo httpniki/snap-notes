@@ -3,6 +3,7 @@ import useFetchNotes from "../hooks/useFetchNotes"
 import type {Note} from "../types/note"
 import type { NotesContextValue,  NotesProviderProps, UpdateNoteProps} from "../types/types"
 import createNoteFnHandler from "../utils/notes_actions/createNoteFnHandler"
+import deleteNoteFnHandler from "../utils/notes_actions/deleteNoteFnHandler"
 import updateNoteFnHandler from "../utils/notes_actions/updateNoteFnHandler"
 import saveNote from "../utils/saveNote"
 
@@ -19,12 +20,11 @@ export function NotesProvider({children}: NotesProviderProps) {
       updateProps: props
    })
 
-   function deleteNote(id: Note['id']) {
-      const updatedNotes = notes.filter(el => el.id !== id)
-      
-      saveNote(updatedNotes)
-      refetchNotes()
-   }
+   const deleteNote = (id: Note['id']) => deleteNoteFnHandler({
+      noteID: id,
+      notes,
+      refetchNotes
+   })
 
    return (
       <NotesContext.Provider 
