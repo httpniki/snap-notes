@@ -1,7 +1,8 @@
-import {createContext, useState} from "react"
+import {createContext }from "react"
 import useFetchNotes from "../hooks/useFetchNotes"
 import type {Note} from "../types/note"
 import type { NotesContextValue,  NotesProviderProps, UpdateNotesProps} from "../types/types"
+import createNoteFnHandler from "../utils/notes_actions/createNoteFnHandler"
 import saveNote from "../utils/saveNote"
 import updateNote from "../utils/updateNote"
 
@@ -10,24 +11,9 @@ export const NotesContext = createContext<NotesContextValue | null>(null)
 export function NotesProvider({children}: NotesProviderProps) {
    const {notes, refetchNotes} = useFetchNotes()
 
-   function createNote() {
-      let id = notes.length
+   const createNote = () => createNoteFnHandler({ notes, refetchNotes })
 
-      const isExists = notes.some(el => Number(el.id) === id)
-      if(isExists) id = id + 1
-
-      const newNote: Note = {
-         content: '',
-         color: '#bc98f3',
-         id: id.toString(),
-         isEditable: true
-      }
-
-      saveNote([...notes, newNote])  
-      refetchNotes()
-   }
-
-   function updateNoteHdlr(props: UpdateNotesProps) {
+   function updateNoteFn(props: UpdateNotesProps) {
       const updatedNotes = notes.map(el => {
          if(el.id === props.id) return updateNote(el, props)
          return el
@@ -49,7 +35,7 @@ export function NotesProvider({children}: NotesProviderProps) {
          value={{
             notes,
             createNote,
-            updateNote: updateNoteHdlr,
+            updateNote: updateNoteFn,
             deleteNote
          }}>
          {children}
