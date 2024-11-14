@@ -1,14 +1,9 @@
-import * as React from "react";
 import useNotes from "../../hooks/useNotes";
-import type {Note as NoteProps} from "../../types/note";
+import type {Note as NoteProps} from "../../types/types";
 import NoteNav from "./NoteNav";
 
 export default function Note({content, color, isEditable, id}: NoteProps) {
-   const {updateNote} = useNotes() 
-
-   function updateNoteHdlr(event: React.ChangeEvent<HTMLTextAreaElement>) {
-      updateNote({content: event.target.value, id})
-   }
+   const { updateNote } = useNotes() 
 
    return(
       <article id="note">
@@ -20,7 +15,7 @@ export default function Note({content, color, isEditable, id}: NoteProps) {
          />
          <textarea 
             defaultValue={content} 
-            onChange={updateNoteHdlr}
+            onChange={(event) => updateNote({content: event.target.value, id})}
             readOnly={!isEditable}
          />
       </article>

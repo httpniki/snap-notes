@@ -1,4 +1,4 @@
-import {Note} from "../types/note";
+import {Note} from "../types/types";
 import {UpdateNoteProps} from "../types/types";
 
 type UpdateArgs = Omit<UpdateNoteProps, 'id'>

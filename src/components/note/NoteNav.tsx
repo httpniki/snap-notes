@@ -1,40 +1,31 @@
 import {useState} from "react";
 import useNotes from "../../hooks/useNotes";
-import {Note} from "../../types/note";
-import changeElementColorStyle from "../../utils/changeColorStyle";
+import {Note} from "../../types/types";
+import changeNoteNavElementsColor from "../../utils/changeNoteNavElementsColor";
 import LockSVG from "../assets/LockSVG";
 import PalleteSVG from "../assets/PaletteSVG";
 import TrashSVG from "../assets/TrashSVG";
 import UnlockSVG from "../assets/UnlockSVG";
 import ChangeNoteColorModal from "./ChangeNoteColorModal";
 
-interface NoteNavProps {
+interface Props {
    noteID: Note['id']
    isEditable: Note['isEditable']
    color: string
    contentLength: number
 }
 
-export default function NoteNav({noteID, isEditable, color, contentLength}: NoteNavProps) {
+export default function NoteNav({noteID, isEditable, color, contentLength}: Props) {
    const {deleteNote, updateNote} = useNotes()
    const [renderModal, setRenderModal] = useState(false)
-   const elementColorStyle = changeElementColorStyle(color)
-
-   function onProtectNote() {
-      updateNote({
-         isEditable: !isEditable,
-         id: noteID
-      })
-   }
+   const elementColors = changeNoteNavElementsColor(color)
 
    return(
       <>
-         <nav 
-            style={{backgroundColor: color}}
-         >
+         <nav style={{backgroundColor: color}}>
             <span 
                id="note-content-length"
-               style={{color: elementColorStyle}}
+               style={{color: elementColors}}
             >
                {contentLength}
             </span>
@@ -45,20 +36,20 @@ export default function NoteNav({noteID, isEditable, color, contentLength}: Note
                   onClick={() => deleteNote(noteID)}
                > 
                   <TrashSVG
-                     style={{fill: elementColorStyle}}   
+                     style={{fill: elementColors}}   
                   />
                </button>
 
                <button 
                   id="protect-note-btn"
-                  onClick={onProtectNote}
+                  onClick={() => updateNote({ isEditable: !isEditable, id: noteID })}
                >
                   {(isEditable)
                      ? <UnlockSVG
-                        style={{stroke: elementColorStyle}}
+                        style={{stroke: elementColors}}
                      />
                      : <LockSVG
-                        style={{stroke: elementColorStyle}}
+                        style={{stroke: elementColors}}
                      />
                   }
                </button>
@@ -67,9 +58,7 @@ export default function NoteNav({noteID, isEditable, color, contentLength}: Note
                   id="change-note-color-btn"
                   onClick={() => setRenderModal(true)}
                >
-                  <PalleteSVG
-                     style={{fill: elementColorStyle}}
-                  />
+                  <PalleteSVG style={{fill: elementColors}}/>
                </button>
             </div>
          </nav>

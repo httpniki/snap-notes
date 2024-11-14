@@ -1,15 +1,30 @@
 import AppHeader from './components/AppHeader'
-import AppMain from './components/AppMain'
+import Note from './components/note/Note'
+import useNotes from './hooks/useNotes'
 import './styles/App.css'
 import './styles/note.css'
 
-function App() {
+export default function App() {
+   const { notes } = useNotes()
+
    return (
       <>
          <AppHeader/>
-         <AppMain/>
+
+         <main>
+            {(notes.length > 0) &&
+               notes.map((el) => {
+                  return (
+                     <Note 
+                        key={el.id} 
+                        content={el.content}
+                        color={el.color}
+                        isEditable={el.isEditable}
+                        id={el.id}
+                     />
+                  )
+               })}
+         </main>
       </>
    )
 }
-
-export default App

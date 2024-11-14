@@ -1,15 +1,15 @@
 import useNotes from '../hooks/useNotes.js'
 
 export default function AppHeader() {
-   const {createNote} = useNotes()
+   const { createNote } = useNotes()
 
    return(
       <header>
          <button 
             id="create-note-btn"
-            onClick={() => createNote({content: '', color: ''})}
+            onClick={createNote}
          >
-         + Add note
+            + Add note
          </button>
       </header>
    )

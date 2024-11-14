@@ -1,4 +1,4 @@
-export const NoteColorPalette = [
+export const noteColorPalette = [
    {
       "name": "light-violet",
       "hex": "#bc98f3" 

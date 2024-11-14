@@ -1,9 +1,9 @@
 :root {
-         --blue: #84b6f4;
-         --yellow: #fdfd96;
-         --green: #b0f2c2;
-         --green-dd: #b0f2c2dd;
-         --violet: #bc98f3;
+   --blue: #84b6f4;
+   --yellow: #fdfd96;
+   --green: #b0f2c2;
+   --green-dd: #b0f2c2dd;
+   --violet: #bc98f3;
 }
 
 * {

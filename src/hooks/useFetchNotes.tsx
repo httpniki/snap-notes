@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react"
-import {Note} from "../types/note"
+import {Note} from "../types/types"
 import fetchNotes from "../utils/fetchNotes"
 import saveNote from "../utils/saveNote"
 
@@ -8,12 +8,13 @@ export default function useFetchNotes() {
 
    useEffect(() => {
       const localStorageNotes = fetchNotes()
+
       if(!localStorageNotes) return saveNote([])
 
       setNotes(localStorageNotes)
    }, [])
    
-   function refetchNotes(): void {
+   function refetchNotes() {
       const localStorageNotes = fetchNotes()
       if(!localStorageNotes) return
 

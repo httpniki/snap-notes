@@ -1,17 +1,16 @@
-import {NoteColorPalette} from '../../consts/note-color-palette'
+import {noteColorPalette} from '../../utils/noteColorPalette'
 import ColorPickerButton from './ColorPickerButton'
-import ColorPickersWrapper from './ColorPickersWrapper'
 
-interface ChangeNoteColorModalProps {
+interface Props {
    closeModal: () => void
    noteID: string
 }
 
-export default function ChangeNoteColorModal({closeModal, noteID}: ChangeNoteColorModalProps){
+export default function ChangeNoteColorModal({closeModal, noteID}: Props){
    return(
-      <ColorPickersWrapper>
+      <div id="note-change-color-modal">
          {
-            NoteColorPalette.map(el => {
+            noteColorPalette.map(el => {
                return <ColorPickerButton
                   key={el.name}
                   hex={el.hex}
@@ -20,6 +19,6 @@ export default function ChangeNoteColorModal({closeModal, noteID}: ChangeNoteCol
                />
             })
          }
-      </ColorPickersWrapper>
+      </div>
    )
 }

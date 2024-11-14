@@ -1,4 +1,4 @@
-import type {Note} from "../types/note"
+import type {Note} from "../types/types"
 
 export default function fetchNotes(): Note[] | null {
    const savedNotes = window.localStorage.getItem('notes')

@@ -1,4 +1,9 @@
-import {Note} from './note.js'
+export interface Note {
+   content: string
+   color: string
+   isEditable: boolean
+   id: string
+}
 
 export interface NotesContextValue {
    notes: Note[]

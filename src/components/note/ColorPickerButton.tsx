@@ -1,6 +1,6 @@
 import useNotes from "../../hooks/useNotes"
 
-interface ColorPickerButtonProps {
+interface Props {
    hex: string
    noteID: string
    closeModal: () => void
@@ -10,14 +10,15 @@ export default function ColorPickerButton({
    hex, 
    noteID, 
    closeModal
-}: ColorPickerButtonProps) {
+}: Props) {
    const {updateNote} = useNotes()
 
-   function onUpdateNoteColor() {
+   function handleUpdateNoteColor() {
       updateNote({
          id: noteID,
          color: hex
       })
+
       closeModal()
    }
 
@@ -26,7 +27,7 @@ export default function ColorPickerButton({
          className="color-picker-btn"
          style={{backgroundColor: hex}}
          data-color = {hex}
-         onClick={onUpdateNoteColor}
+         onClick={handleUpdateNoteColor}
       >
          {hex}
       </button>
