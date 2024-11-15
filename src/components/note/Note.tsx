@@ -6,7 +6,7 @@ export default function Note({content, color, isEditable, id}: NoteProps) {
    const { updateNote } = useNotes() 
 
    return(
-      <article id="note">
+      <article className="note" data-id={id}>
          <NoteNav 
             noteID={id}
             isEditable={isEditable}
