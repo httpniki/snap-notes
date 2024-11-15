@@ -4,8 +4,8 @@
 
 <div align="center">
   <p>A React Notes App. Simple and Beautiful.</p>
-
-  https://github.com/user-attachments/assets/f71b6d91-36e2-4f2d-a30a-11272425777a
+  
+  https://github.com/user-attachments/assets/e5db2f9d-78e9-460f-94ea-8f8510751312
 </div>
 
 
