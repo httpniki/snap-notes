@@ -34,5 +34,17 @@ export const noteColorPalette = [
    {
       "name": "blue",
       "hex": "#95b8f6"
+   }, 
+   {
+      "name": "blacky-purple",
+      "hex": "#432E54"
+   },
+   {
+      "name": "mars",
+      "hex": "#C63C51"
+   },
+   {
+      "name": "rosita",
+      "hex": "#EB3678"
    }
 ]
