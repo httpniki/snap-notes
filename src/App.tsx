@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import AppHeader from './components/AppHeader'
+import Navigation from './components/Navigation'
 import Note from './components/note/Note'
 import useNotes from './hooks/useNotes'
 import './styles/App.css'
@@ -51,7 +51,7 @@ export default function App() {
 
    return (
       <>
-         <AppHeader/>
+         <Navigation/>
 
          <main>
             {(notes.length > 0) &&

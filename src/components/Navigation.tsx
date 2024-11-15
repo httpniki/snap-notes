@@ -1,6 +1,6 @@
 import useNotes from '../hooks/useNotes.js'
 
-export default function AppHeader() {
+export default function Navigation() {
    const { createNote } = useNotes()
 
    return(
