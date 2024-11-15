@@ -11,8 +11,8 @@ export default function LockSVG({style}: Props) {
          strokeWidth="1.5" 
          stroke="#ffffff" 
          fill="none" 
-         stroke-linecap="round" 
-         stroke-linejoin="round"
+         strokeLinecap="round" 
+         strokeLinejoin="round"
          style={style}
       >
          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
