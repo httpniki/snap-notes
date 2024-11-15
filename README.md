@@ -8,5 +8,9 @@
   https://github.com/user-attachments/assets/e5db2f9d-78e9-460f-94ea-8f8510751312
 </div>
 
+## keymaps ##
 
-
+- \<Ctrl-a\> Create note
+- \<Ctrl-l\> Lock/Unlock active note
+- \<Tab\> Jump between unlocked notes
+- \<Delete> Delete active note
