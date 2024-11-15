@@ -5,7 +5,7 @@
 
    width: 320px;
    min-height: 310px;
-   box-shadow: 0 0 15px #00000010;
+   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
 
 textarea {
