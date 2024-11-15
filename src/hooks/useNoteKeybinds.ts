@@ -41,10 +41,6 @@ export default function useKeybinds() {
             event.preventDefault()
             deleteNote(note.id)
             break
-         case 'Delete':
-            if(!note) break
-            deleteNote(note.id)
-            break
          case 'l': 
             if(!event.ctrlKey || !note) break
             event.preventDefault()
