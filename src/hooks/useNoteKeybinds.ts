@@ -30,15 +30,14 @@ export default function useKeybinds() {
       function handleKeyDown(event: KeyboardEvent) {
          const $note = document.activeElement?.parentElement as HTMLElement
          const note = notes.find((el) => el.id === $note.dataset.id)
-
+         
          switch(event.key) {
          case 'Tab': 
             event.preventDefault()
             toggleNote($note)
             break
-         case 'Backspace':
+         case 'Delete':
             if(!note) break
-            event.preventDefault()
             deleteNote(note.id)
             break
          case 'l': 
