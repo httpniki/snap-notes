@@ -1,5 +1,12 @@
-# Snap Notes 📝
+<h1 align="center"> 
+  Snap Notes 📝
+</h1>
 
-A note app written in TypeScript using React.
+<div align="center">
+  <p>A React Notes App. Simple and Beautiful.</p>
 
-<video src="public/demo.mp4" width="100%" controls></video>
+  https://github.com/user-attachments/assets/f71b6d91-36e2-4f2d-a30a-11272425777a
+</div>
+
+
+
